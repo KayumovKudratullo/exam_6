@@ -1,0 +1,21 @@
+.form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+  }
+  
+  .contact-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

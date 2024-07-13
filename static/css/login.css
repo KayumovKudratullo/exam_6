@@ -1,0 +1,47 @@
+/* Basic form styling */
+form {
+    display: flex; /* Arrange form elements horizontally */
+    flex-direction: column; /* Stack elements vertically */
+    width: fit-content; /* Adjust width based on content */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 1rem; /* Add some space between groups */
+  }
+  
+  /* Input field styling */
+  input[type="text"],
+  input[type="password"] {
+    display: block; /* Make inputs take up full width */
+    width: 100%;
+    padding: 0.5rem 1rem; /* Add padding for better readability */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Adjust font size */
+  }
+  
+  /* Focus state for improved usability */
+  input[type="text"]:focus,
+  input[type="password"]:focus {
+    outline: none; /* Remove default outline */
+    border-color: #888; /* Change border color on focus */
+  }
+  
+  /* Button styling */
+  button.btn.contact-btn {
+    background-color: #3498db; /* Adjust button color */
+    color: white; /* Text color */
+    padding: 0.75rem 1.5rem; /* Add padding */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Indicate clickable element */
+    font-size: 16px; /* Adjust font size */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  button.btn.contact-btn:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+  }
+  

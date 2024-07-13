@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Lambda  A Hotal and Restaurants category Flat Bootstarp responsive Website Template| Home :: w3layouts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Lambda Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="{% static 'css/bootstrap.css' %}" rel='stylesheet' type='text/css'/>
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />	    
+	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'cssjs/jquery.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/corusel.css' %}">
+<link rel="stylesheet" href="{% static 'css/comment.css' %}">
+<script src="{% static 'js/corusel.js' %}"></script>
+<link href='http://fonts.googleapis.com/css?family=Yeseva+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+ <script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+	</script>
+<!---End-smoth-scrolling---->
+<!---strat-date-piker---->
+<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+<script src="{% static 'js/jquery-ui.js' %}"></script>
+		  <script>
+				  $(function() {
+				    $( "#datepicker,#datepicker1" ).datepicker();
+				  });
+		  </script>
+<!---/End-date-piker---->
+<!--Animation-->
+<script src="{% static 'js/wow.min.js' %}"></script>
+<link href="{% static 'css/animate.css' %}" rel='stylesheet' type='text/css' />
+<script>
+	new WOW().init();
+</script>
+<!---/End-Animation---->
+</head>
+<body>
+	<div class="header" id="home" style="background-image: url('{{banner.img.url}}');  
+	background-size:cover;
+	min-height:690px;
+	padding-top:3em;">
+		<div class="container">
+			<div class="header-top">
+			<div class="top-menu" style="margin-bottom: auto;">
+				<span class="menu"> </span>
+						<ul>
+						<li><a href="#home" class="scroll"><span data-hover="home">home</span></a></li>
+						 <li><a href="#about" class="scroll"><span data-hover="about">about</span></a></li>
+						 <li><a href="#igredients" class="scroll"><span data-hover="igredients">igredients</span></a></li>
+							 <li><a href="#menu" class="scroll"><span data-hover="menu">menu</span></a></li>
+								 <li><a href="#reviews" class="scroll"><span data-hover="reviews">reviews</span></a></li>
+									 <li><a href="#reservations" class="scroll"><span data-hover="reservations">reservations</span></a></li>	
+									 <li><a href="{% url 'login_user' %}" class="scroll"><span data-hover="reservations">log in</span></a></li>	
+									 <li><a href="{% url 'register_user' %}" class="scroll"><span data-hover="reservations">register</span></a></li>
+									 	
+									</ul>
+			</div>
+				<div class="clearfix"></div>
+				</div>
+				<div class="baneer-center wow fadeInLeft" data-wow-delay="0.5s">
+					<h1>{{banner.title}}</h1>
+					
+					</div>
+					
+					<div class="buttons">
+						<a class="button" href="{% url 'form' %}"> Make reservation</a>
+						<a class="button1"href="#menu">see the menu</a>
+					</div>
+					</div>
+				</div>
+
+
+				<div class="content"  >
+					<div class="about" id="about">
+						<div class="container">
+							<div class="col-md-6 about-leftgrid wow bounceInRight animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+								<h2>{{special.name}}</h2>
+								<img src="{% static 'images/img2.png' %}" alt=""/>
+								<p>{{special.body}}</p>
+							    <img src="{{special.cook.img.url}}" class="cook"  alt=""/>
+							</div>
+							<div class="col-md-6 about-rightgrid  wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+								<img src="{{special.img.url}}"  alt=""/>
+								</div>
+							<div class="clearfix"></div>
+						</div>
+						
+					</div>
+					
+					<div class="igredients" id="igredients" style="background-image: url('{{chef.img.url}}');">
+						<div class="container" style=" display: flex;
+						justify-content: center;
+						align-items: center;" >
+						<div class="fine-igredients wow bounceInRight animated"  style="visibility: visible; ">
+							<div class="fine-igredient" >
+							<h3>{{chef.title}}</h3>
+							<img src="{% static 'images/divider.png' %}"   alt=""/>
+							<p>{{chef.body}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="menu9" id="menu">
+					<div class="container">
+						
+						<div class="col-md-6 menu-grids wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+							<div class="menu-grid1">
+							<h3>appetisers</h3>
+								<img src="{% static 'images/img2.png' %}"  alt=""/>
+								{% for app in appetisers %}
+								<div class="menu-grid">
+								<div class="tzatsikis">
+								<div class="tzatsiki">
+									<a href="{% url 'test' app.id %}">
+										<h4>{{app.name}}</h4>
+									</a>
+									</div>
+									<div class="dollar">
+										<h4>${{app.price}}</h4>
+										</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>{{app.body}}</p>
+							</div>
+							{% endfor %}
+								</div>
+							<div class="menu-grid2">
+								<h3>Salads</h3>
+								<img src="{% static 'images/img2.png' %}"  alt=""/>
+								{% for salad in salads %}
+								<div class="menu-grid">
+								<div class="tzatsikis">
+								<div class="tzatsiki">
+									<a href="{% url 'test' salad.id %}">
+										<h4>{{salad.name}}</h4>
+									</a>
+									</div>
+									<div class="dollar">
+										<h4>${{salad.price}}</ph4>
+										</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>{{salad.body}}</p>
+								</div>
+								{% endfor %}
+								</div>
+								</div>
+							
+						<div class="col-md-6 menu-grids1  wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+
+						<div class="menu-grid4">
+								<h3>Main Dishes</h3>
+								<img src="{% static 'images/img2.png' %}"   alt=""/>
+								{% for main in main_foods %}
+								<div class="menu-grid">
+								<div class="tzatsikis">
+								<div class="tzatsiki">
+									<a href="{% url 'test' main.id %}">
+										<h4>{{main.name}}</h4>
+									</a>
+									</div>
+									<div class="dollar">
+										<h4>${{main.price}}</h4>
+										</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>{{main.body}}</p>
+								</div>
+								{% endfor %}
+								</div>
+							<div class="clearfix"></div>
+						</div>
+						</div>
+					</div>
+					<!-- corusel -->
+					<div class="reviews" id="reviews">
+						<div class="container">
+							<div class="review-info wow bounceInLeft animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+								<div class="carousel">
+									<div class="carousel-inner">
+										{% for main in comments %}
+										<div class="carousel-item {% if forloop.first %}active{% endif %}">
+											<h3>{{main.author.username}}</h3>
+											
+											<p>{{main.body}}</p>
+											<p>{{main.created_at}}</p>
+										</div>
+										{% endfor %}
+									</div>
+									<button class="carousel-control-prev" onclick="prevSlide()">&#10094;</button>
+									<button class="carousel-control-next" onclick="nextSlide()">&#10095;</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{% if user.is_authenticated %}
+                        <!-- Leave A Comment -->
+                        <div class="leave-comment-area section_padding_50 clearfix">
+                            <div class="comment-form">
+                                <h4 class="mb-30">Leave A Comment</h4>
+                                <!-- Comment Form -->
+                                <form action="#" method="post">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="message" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    </div>
+                                    <input type="hidden" name="user" value="{{ user.username }}">
+                                    <button type="submit" class="btn contact-btn">Post Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    {% endif %}
+
+					<div class="reservations" id="reservations">
+						<div class="container">
+							<div class="col-md-6 grid-section wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+								
+						<div class="reservation-leftgrid">
+							<img src="{% static 'images/pic-4.jpg' %}" class="img-responsive"  alt="" />
+							</div>
+
+						<div class="reservation-leftgrid1">
+								<img src="{% static 'images/pic-5.jpg' %}" class="img-responsive"  alt="" />
+								</div>
+
+								<div class=" clearfix"></div>
+									</div>
+						<div class="col-md-6 reservation-rightgrid wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">
+						<h4>Just the right food</h4>
+							<img src="{% static 'images/img2.png' %}" alt=""/>
+								<p>If you’ve been to one of our restaurants, you’ve seen – and tasted – what keeps our customers coming back for more. Perfect materials and freshly baked food.</p>
+								<span>Delicious Lambda cakes,  muffins, and gourmet coffees make us hard to resist! Stop in today and check us out! Perfect materials and freshly baked food.</span>
+								<br> <br>
+								<a class="button" href="{% url 'form' %}"> Make reservation</a>
+								</div>
+								
+								<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="footer-section wow fadeInLeft" data-wow-delay="0.5s">
+					<div class="container">
+						<div class="footer-grids">
+						<div class="col-md-4 footer-grid">
+							<h5>about us</h5>
+								<img src="{% static 'images/divider.png' %}" alt=""/>
+								<p>Lambda's new and expanded Chelsea location represents a truly authentic <span>Greek</span> patisserie, featuring breakfasts of fresh croissants and</p> 
+								<p>steaming bowls of café.Lamda the best restaurant in town</p>
+							
+							</div>
+							<div class="col-md-4 footer-grid">
+							<h5>Opening Hours</h5>
+								<img src="{% static 'images/divider.png' %}" alt=""/>
+								<p><span>Mon-Thu:</span> 7:00am-8:00pm</p> 
+									<p><span>Fri-Sun:</span> 7:00am-10:00pm</p>
+									<a href="#"><img src="{% static 'images/cards.png' %}" alt="" /></a>
+							</div>
+							<div class="col-md-4 footer-grid">
+							<h5>Our Location</h5>
+								<img src="{% static 'images/divider.png' %}" alt=""/>
+								<p>19th Paradise Street Sitia</p>
+									<p>128 Meserole Avenue</p>
+									<div class="footer-socialicons">	
+										<a href="#"><i class="icon4"></i></a>
+										<a href="#"><i class="icon5"></i></a>
+										<a href="#"><i class="icon6"></i></a>
+										</div>
+							</div>
+							<div class="clearfix"></div>
+							</div>
+							<div class="footer-bottom">
+							<p> Copyright &copy;2015  All rights  Reserved | Template by<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+					</div>
+					<script type="text/javascript">
+						$(document).ready(function() {
+							/*
+							var defaults = {
+					  			containerID: 'toTop', // fading element id
+								containerHoverID: 'toTopHover', // fading element hover id
+								scrollSpeed: 1200,
+								easingType: 'linear' 
+					 		};
+							*/
+							
+							$().UItoTop({ easingType: 'easeOutQuart' });
+							
+						});
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+
+
+						</div>
+					</div>
+		</body>
+</html>

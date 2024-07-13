@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/formla.css' %}">
+</head>
+<body>
+    <form action="#" method="post">
+        {% csrf_token %}
+        <div class="contact">
+            <div class="contact-text">
+                <h5>Name</h5>
+                <input type="text" name="name" class="text" required>
+            </div>
+            <div class="contact-text">
+                <h5>E-mail</h5>
+                <input type="text" name="email" class="text" required>
+            </div>
+            <div class="contact-text">
+                <h5>Date</h5>
+                <input class="date" name="date" id="datepicker" type="date" required>
+            </div>
+            
+            <div class="contact-text">
+                <h5>Party Number</h5>
+                <div class="dropdown-button">
+                    <select name="party" class="dropdown" tabindex="10" data-settings='{"wrapperClass":"flat"}' required>
+                        <option value="0">party number</option>	
+                        <option value="1">0000001</option>
+                        <option value="2">0000002</option>
+                        <option value="3">0000003</option>
+                        <option value="4">0000004</option>
+                        <option value="5">0000005</option>
+                        <option value="6">0000006</option>
+                        <option value="7">0000007</option>
+                        <option value="8">0000008</option>
+                        <option value="9">0000009</option>
+                    </select>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <button class="btn btn-1 btn-1c">Book now!</button>
+    </form>
+    
+</body>
+</html>

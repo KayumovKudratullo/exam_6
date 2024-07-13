@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ main.name }}</title>
+   
+    <link rel="stylesheet" href="{% static 'css/corusel1.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="appetiser">
+            <h1>{{ main.name }}</h1>
+            <img src="{{ main.img.url }}" alt="{{ main.name }}">
+            <p>{{ main.body }}</p>
+            <p>Price: ${{ main.price }}</p>
+            <p>Cook: {{ main.cook.full_name }}</p>
+        </div>
+    </div>
+</body>
+</html>
