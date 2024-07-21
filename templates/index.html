@@ -64,9 +64,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							 <li><a href="#menu" class="scroll"><span data-hover="menu">menu</span></a></li>
 								 <li><a href="#reviews" class="scroll"><span data-hover="reviews">reviews</span></a></li>
 									 <li><a href="#reservations" class="scroll"><span data-hover="reservations">reservations</span></a></li>	
-									 <li><a href="{% url 'login_user' %}" class="scroll"><span data-hover="reservations">log in</span></a></li>	
+									 <li><a href="{% url 'login_user' %}" class="scroll"><span data-hover="reservations">Login</span></a></li>	
 									 <li><a href="{% url 'register_user' %}" class="scroll"><span data-hover="reservations">register</span></a></li>
-									 	
+									 <li><a href="{% url 'logout' %}" class="scroll"><span data-hover="reservations">Logout</span></a></li>
 									</ul>
 			</div>
 				<div class="clearfix"></div>
@@ -121,8 +121,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="menu-grid1">
 							<h3>appetisers</h3>
 								<img src="{% static 'images/img2.png' %}"  alt=""/>
-								{% for app in appetisers %}
 								<div class="menu-grid">
+									{% for app in appetisers %}
 								<div class="tzatsikis">
 								<div class="tzatsiki">
 									<a href="{% url 'test' app.id %}">
@@ -135,8 +135,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<div class="clearfix"></div>
 								</div>
 								<p>{{app.body}}</p>
+								{% endfor %}
+                                
+							{% for special in queryset %}
+							<div class="menu1-grid">
+									<a href="#">special</a>
+								<div class="menu-grid5">
+									<div class="menu-grid">
+								<div class="tzatsikis">
+								<div class="tzatsiki">
+									<h4>{{special.name}}</h4>
+									</div>
+									<div class="dollar">
+										<h4>${{special.price}}</h4>
+										</div>
+									<div class="clearfix"></div>
+								</div>
+								<p>{{special.body}}.</p>
+								</div>
+								</div>
 							</div>
 							{% endfor %}
+							</div>
 								</div>
 							<div class="menu-grid2">
 								<h3>Salads</h3>
@@ -158,6 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								{% endfor %}
 								</div>
+								
 								</div>
 							
 						<div class="col-md-6 menu-grids1  wow bounceIn animated" data-wow-delay="0.4s" style="visibility: visible; -webkit-animation-delay: 0.4s;">

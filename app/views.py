@@ -1,15 +1,19 @@
 from django.shortcuts import render, redirect
 from . import models
+from Special.models import SpecialMeal
+from random import shuffle
 
 # Create your views here.
 def main(request):
     banner = models.Banner.objects.last()
-    special = models.Meals.objects.last()
-    appetiser = models.Meals.objects.filter(category = 3).values()
-    main_food= models.Meals.objects.filter(category = 1).values()
-    salad = models.Meals.objects.filter(category = 2).values()
+    special = models.Meal.objects.last()
+    appetiser = models.Meal.objects.filter(category = 3).values()
+    main_food= models.Meal.objects.filter(category = 1).values()
+    salad = models.Meal.objects.filter(category = 2).values()
     chef = models.AboutUs.objects.last()
     comments = models.Comment.objects.all()
+    queryset = SpecialMeal.objects.all()
+    q = shuffle(list(queryset) + list(salad))
     context = {
         'banner': banner,
         'special': special,
@@ -18,6 +22,7 @@ def main(request):
         'salads': salad,
         'chef': chef,
         'comments': comments,
+        'queryset':q,
     }
 
     if request.method == 'POST':
@@ -46,7 +51,7 @@ def corusel(request):
 
 
 def test(request, id):
-    main = models.Meals.objects.get(id=id)
+    main = models.Meal.objects.get(id=id)
     print(main.cook.full_name)
     context = {
         'main': main,}

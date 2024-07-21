@@ -23,7 +23,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main, name='index'),
-    path('corusel', views.corusel, name='form'),
-    path('test/<int:id>/', views.test, name='test'),
-    path('authenticate/', include('app.authentication.urls')),
+    path('special/', include('Special.urls')),
+    path('app/', include('app.urls')),
+    path('authenticate/', include('User.authentication.urls')),
 ] + static(settings.MEDIA_URL, document_root =settings.MEDIA_ROOT)

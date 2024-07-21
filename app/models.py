@@ -1,21 +1,13 @@
 from django.db import models
-from django.contrib.auth.models import  AbstractUser
+from User.models import User
 
-
-class User(AbstractUser):
-    bio = models.TextField(null=True, blank=True)
-
-    class Meta(AbstractUser.Meta):
-        swappable = 'AUTH_USER_MODEL'
-        verbose_name = 'User'
-        verbose_name_plural = 'Users'
 
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
 
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
@@ -28,7 +20,7 @@ class Cook(models.Model):
     img = models.ImageField()
 
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'Cook'
         verbose_name_plural = 'Cooks'
 
@@ -41,7 +33,7 @@ class Banner(models.Model):
     img = models.ImageField()
 
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'Banner'
         verbose_name_plural = 'Banners'
 
@@ -49,7 +41,7 @@ class Banner(models.Model):
         return self.title
 
 
-class Meals(models.Model):
+class Meal(models.Model):
     name = models.CharField(max_length=255)
     body = models.TextField()
     img = models.ImageField()
@@ -58,7 +50,7 @@ class Meals(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'Meal'
         verbose_name_plural = 'Meals'
 
@@ -71,7 +63,7 @@ class AboutUs(models.Model):
     body = models.TextField()
     img = models.ImageField()
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'AboutUs'
         verbose_name_plural = 'AboutUS'
 
@@ -85,7 +77,7 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'Comment'
         verbose_name_plural = 'Comments'
     
@@ -99,7 +91,7 @@ class Reserve(models.Model):
     date = models.DateField()
     party  = models.CharField(max_length=20)
 
-    class Meta(AbstractUser.Meta):
+    class Meta():
         verbose_name = 'Reservation'
         verbose_name_plural = 'Reservations'
 
